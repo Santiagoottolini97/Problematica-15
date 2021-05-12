@@ -1,32 +1,37 @@
-const Page = require('./page');
-
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () { return $('#username') }
-    get inputPassword () { return $('#password') }
-    get btnSubmit () { return $('button[type="submit"]') }
-
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    async login (username, password) {
-        await (await this.inputUsername).setValue(username);
-        await (await this.inputPassword).setValue(password);
-        await (await this.btnSubmit).click();
+class LoginPage {
+    get inputEmail() {
+      return $(
+        `form>
+         div[class="form_group"]>
+         input[id="user-name"]`
+      );
     }
-
-    /**
-     * overwrite specifc options to adapt it to page object
-     */
-    open () {
-        return super.open('login');
+    get inputPassword() {
+      return $(
+        `form>
+         div[class="form_group"]>
+         input[id="password"]`
+      );
     }
-}
-
-module.exports = new LoginPage();
+    get errorText() {
+        return $(
+        `form>
+        div[class="error-message-container error"]>
+        h3`
+        ).getText();
+      }
+    get btnSubmit() {
+      return $(
+        `form>
+         input[id="login-button"]`
+      );
+    }
+    testLogin(email, password) {
+      this.inputEmail.setValue(email);
+      this.inputPassword.setValue(password);
+      this.btnSubmit.click();
+    }
+  }
+  
+  module.exports = new LoginPage();
+  
