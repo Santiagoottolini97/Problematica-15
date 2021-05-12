@@ -1,37 +1,37 @@
 class LoginPage {
     get inputEmail() {
-      return $(
-        `form>
+        return $(
+            `form>
          div[class="form_group"]>
          input[id="user-name"]`
-      );
+        );
     }
     get inputPassword() {
-      return $(
-        `form>
+        return $(
+            `form>
          div[class="form_group"]>
          input[id="password"]`
-      );
+        );
     }
     get errorText() {
         return $(
-        `form>
+            `form>
         div[class="error-message-container error"]>
         h3`
         ).getText();
-      }
+    }
     get btnSubmit() {
-      return $(
-        `form>
+        return $(
+            `form>
          input[id="login-button"]`
-      );
+        );
     }
+
     testLogin(email, password) {
-      this.inputEmail.setValue(email);
-      this.inputPassword.setValue(password);
-      this.btnSubmit.click();
+        this.inputEmail.setValue(email);
+        this.inputPassword.setValue(password);
+        this.btnSubmit.click();
     }
-  }
-  
-  module.exports = new LoginPage();
-  
+}
+
+module.exports = new LoginPage();
