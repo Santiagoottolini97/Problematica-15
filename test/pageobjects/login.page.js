@@ -1,28 +1,28 @@
 class LoginPage {
     get inputEmail() {
         return $(
-            `form>
+        `form>
          div[class="form_group"]>
          input[id="user-name"]`
         );
     }
     get inputPassword() {
         return $(
-            `form>
+        `form>
          div[class="form_group"]>
          input[id="password"]`
         );
     }
     get errorText() {
         return $(
-            `form>
+        `form>
         div[class="error-message-container error"]>
         h3`
         ).getText();
     }
     get btnSubmit() {
         return $(
-            `form>
+        `form>
          input[id="login-button"]`
         );
     }

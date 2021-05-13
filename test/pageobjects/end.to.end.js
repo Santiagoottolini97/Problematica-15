@@ -1,9 +1,21 @@
 class EndToEnd {
-    get btnProductLink() {
+    get btnProductLinkOne() {
         return $('a[id="item_4_title_link"]').click();
     }
-    get btnAddToCar() {
+    get btnProductLinkTwo() {
+        return $('a[id="item_0_title_link"]').click();
+    }
+    get btnProductLinkThree() {
+        return $('a[id="item_1_title_link"]').click();
+    }
+    get btnAddToCarOne() {
         return $('button[id="add-to-cart-sauce-labs-backpack"]').click();
+    }
+    get btnAddToCarTwo() {
+        return $('button[id="add-to-cart-sauce-labs-bike-light"]').click();
+    }
+    get btnAddToCarThree() {
+        return $('button[id="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
     }
     get btnRemoveToCar() {
         return $('button[id="remove-sauce-labs-backpack"]').click();
@@ -26,6 +38,9 @@ class EndToEnd {
     get btnConinueCheckOut() {
         return $('input[id="continue"]').click();
     }
+    get btnBackToProduct() {
+        return $('button[id="back-to-products"]').click();
+    }
     get inputName() {
         return $('input[id="first-name"]');
     }
@@ -35,6 +50,7 @@ class EndToEnd {
     get inputZipCode() {
         return $('input[id="postal-code"]');
     }
+    
     testCheckOut(name, lastname, zipcode) {
         this.inputName.setValue(name);
         this.inputLastName.setValue(lastname);
@@ -44,10 +60,4 @@ class EndToEnd {
 
 module.exports = new EndToEnd();
 
-/*div>
-           div[id="inventory_container"]>
-           div[id="inventory_container"]>
-           div[class="inventory_list"]>
-           div[class="inventory_item"]>
-           div[class="inventory_item_description"]>
-           div[class="inventory_item_label"]>*/
+

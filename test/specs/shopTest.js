@@ -9,15 +9,15 @@ describe('Test shopping car', () => {
     //Variables
     const swagLabsUrl = 'https://www.saucedemo.com/';
 
-    describe('END TO END TEST', () => {
+    describe('END TO END TEST WITH ONE PRODUCT', () => {
         it('Choose the product', () => {
             browser.url(swagLabsUrl);
             LoginPage.testLogin('standard_user', 'secret_sauce');
-            EndToEnd.btnProductLink;
             browserPause();
         });
         it('Add to car', () => {
-            EndToEnd.btnAddToCar;
+            EndToEnd.btnProductLinkOne;
+            EndToEnd.btnAddToCarOne;
             browserPause();
         });
         it('Remove to car', () => {
@@ -25,7 +25,7 @@ describe('Test shopping car', () => {
             browserPause();
         });
         it('Check car', () => {
-            EndToEnd.btnAddToCar;
+            EndToEnd.btnAddToCarOne;
             EndToEnd.btnShoppingCar;
             browserPause();
         });
@@ -38,15 +38,58 @@ describe('Test shopping car', () => {
             browserPause();
         });
         it('Check out', () => {
-            EndToEnd.btnbtnProductLink;
-            EndToEnd.btnbtnAddToCar;
+            EndToEnd.btnProductLinkOne;
+            EndToEnd.btnbtnAddToCarOne;
             EndToEnd.btnShoppingCar;
             EndToEnd.btnCheckOut;
             EndToEnd.testCheckOut('santiago', 'ottolini', '2000');
+            browserPause();
             EndToEnd.btnConinueCheckOut;
             EndToEnd.btnFinish;
+            browserPause();
             EndToEnd.btnBackToHome;
             browserPause();
+        });
+    });
+    describe('END TO END TEST WITH THREE PRODUCT', () => {
+        it('Check out with more products', () => {
+            EndToEnd.btnAddToCarOne;
+            browserPause();
+            EndToEnd.btnAddToCarTwo;
+            browserPause();
+            EndToEnd.btnAddToCarThree;
+            browserPause();
+            EndToEnd.btnShoppingCar;
+            browserPause();
+            EndToEnd.btnCheckOut;
+            browserPause();
+            EndToEnd.testCheckOut('santiago', 'ottolini', '2000');
+            EndToEnd.btnConinueCheckOut;
+            EndToEnd.btnFinish;
+            browserPause();
+            EndToEnd.btnBackToHome;
+        });
+        it('Complete process', () => {
+            EndToEnd.btnProductLinkOne;
+            EndToEnd.btnAddToCarOne;
+            browserPause();
+            EndToEnd.btnBackToProduct;
+            EndToEnd.btnProductLinkTwo;
+            EndToEnd.btnAddToCarTwo;
+            browserPause();
+            EndToEnd.btnBackToProduct;
+            EndToEnd.btnProductLinkThree;
+            EndToEnd.btnAddToCarThree;
+            browserPause();
+            EndToEnd.btnShoppingCar;
+            browserPause();
+            EndToEnd.btnCheckOut;
+            browserPause();
+            EndToEnd.testCheckOut('santiago', 'ottolini', '2000');
+            EndToEnd.btnConinueCheckOut;
+            EndToEnd.btnFinish;
+            browserPause();
+            EndToEnd.btnBackToHome;
         });
     });
 });

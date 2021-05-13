@@ -16,32 +16,32 @@ describe('Test menu options', () => {
             browserPause();
         });
     });
-    describe('NAME (A to Z)', () => {
+     describe('NAME (A to Z)', () => {
         it('Order by name (a-z)', () => {
             Order.btnOrder;
-            browserPause();
             Order.btnNameAZ;
+            browserPause();
         });
     });
     describe('NAME (Z to A)', () => {
         it('Order by name (z-a)', () => {
             Order.btnOrder;
-            browserPause();
             Order.btnNameZA;
+            browserPause();
         });
     });
     describe('LOW TO HIGH', () => {
         it('Order by price (low-high)', () => {
             Order.btnOrder;
-            browserPause();
             Order.btnPriceLowHigh;
+            browserPause();
         });
-    });
+    }); 
     describe('HIGH TO LOW', () => {
         it('Order by price (high-low)', () => {
             Order.btnOrder;
-            browserPause();
             Order.btnPriceHighLow;
+            browserPause();
         });
     });
 });
