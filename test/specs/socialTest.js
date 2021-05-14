@@ -1,7 +1,7 @@
 const LoginPage = require('../pageobjects/login.page');
 const Social = require('../pageobjects/social');
 
-describe('Test menu options', () => {
+describe('Test social networks', () => {
     function browserPause() {
         browser.pause(2000);
     }
