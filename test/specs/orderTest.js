@@ -1,7 +1,7 @@
 const LoginPage = require('../pageobjects/login.page');
 const Order = require('../pageobjects/order');
 
-describe('Test menu options', () => {
+describe('Test order items', () => {
     function browserPause() {
         browser.pause(2000);
     }
