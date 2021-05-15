@@ -18,20 +18,24 @@ describe('Test social networks', () => {
     });
     describe('TWITTER', () => {
         it('Open twitter', () => {
-            Social.btnTwitter;
+            expect(Social.linkTwitter).toBe('https://twitter.com/saucelabs');
+            Social.btnTwitter
             browserPause();
         });
     });
     describe('FACEBOOK', () => {
         it('Open facebook', () => {
-            Social.btnFacebook;
+            expect(Social.linkFacebook).toBe('https://www.facebook.com/saucelabs');
+            Social.btnFacebook
             browserPause();
         });
     });
     describe('LINKEDIN', () => {
-        it('Open Linkedin', () => {
-            Social.btnLinkedin;
+        it('Open linkedion', () => {
+            expect(Social.linkLinkedin).toBe('https://www.linkedin.com/company/sauce-labs/');
+            Social.btnLinkedin
             browserPause();
         });
     });
+    
 });

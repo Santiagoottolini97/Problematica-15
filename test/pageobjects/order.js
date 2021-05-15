@@ -1,4 +1,17 @@
 class Order {
+    get textNameAZ() {
+        return $('select[class="product_sort_container"]>option[value="az"]').getText();
+    }
+    get textNameZA() {
+        return $('select[class="product_sort_container"]>option[value="za"]').getText();
+    }
+    get textPriceLowHigh() {
+        return $('select[class="product_sort_container"]>option[value="lohi"]').getText();
+    }
+    get textPriceHighLow() {
+        return $('select[class="product_sort_container"]>option[value="hilo"]').getText();
+    }
+    
     get btnOrder() {
         return $('select[class="product_sort_container"]').click();
     }

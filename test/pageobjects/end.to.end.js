@@ -14,6 +14,9 @@ class EndToEnd {
     get btnAddToCarTwo() {
         return $('button[id="add-to-cart-sauce-labs-bike-light"]').click();
     }
+    get btnCancel() {
+        return $('button[id="cancel"]').click();
+    }
     get btnAddToCarThree() {
         return $('button[id="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
     }
@@ -49,6 +52,18 @@ class EndToEnd {
     }
     get inputZipCode() {
         return $('input[id="postal-code"]');
+    }
+    get errorFirstName() {
+        return $(
+        'div[class="error-message-container error"]>h3').getText();
+    }
+    get errorLastName() {
+        return $(
+        'div[class="error-message-container error"]>h3').getText();
+    }
+    get errorPostalCode() {
+        return $(
+        'div[class="error-message-container error"]>h3').getText();
     }
     
     testCheckOut(name, lastname, zipcode) {
